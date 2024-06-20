@@ -1,0 +1,70 @@
+---
+import LinkInline from "./LinkInline.astro";
+
+interface Props {
+  date: string;
+  title: string;
+  company: string;
+  description: string;
+  link?: string;
+}
+
+const { date, title, company, description, link } = Astro.props;
+---
+
+<div class="absolute w-3 h-3 bg-orange-400 rounded-full mt-1.5 -start-1.5">
+</div>
+
+<div class="flex md:flex-row flex-col justify-between gap-x-10 pb-12">
+  <div class="flex flex-col md:w-3/6 w-full pb-12">
+    <h3
+      class="text-xl font-semibold text-orange-400/90"
+      data-aos="fade-up"
+      data-aos-duration="500"
+    >
+      {title}
+    </h3>
+    <h4
+      class="text-lg font-semibold text-white"
+      data-aos="fade-up"
+      data-aos-duration="800"
+    >
+      {company}
+    </h4>
+    <time
+      class="mt-2 text-sm font-normal leading-none text-white/80"
+      data-aos="fade-up"
+      data-aos-duration="1000">{date}</time
+    >
+  </div>
+  <div class="flex flex-col md:w-3/6 w-full" data-aos="fade-left">
+    <p class="mb-4 text-base font-normal text-gray-300 text-pretty">
+      {description}
+    </p>
+    {
+      link && (
+        <LinkInline href={link}>
+          Web page
+          <svg
+            class="size-4 ml-1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            preserveAspectRatio="xMidYMid"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <>
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 6l6 6l-6 6" />
+            </>
+          </svg>
+        </LinkInline>
+      )
+    }
+  </div>
+</div>

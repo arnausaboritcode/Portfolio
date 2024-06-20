@@ -1,0 +1,37 @@
+---
+import GitHub from "../icons/GitHub.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import Love from "../icons/Love.astro";
+import Portfolio from "../icons/Portfolio.astro";
+import SocialBadge from "./SocialBadge.astro";
+---
+
+<footer class="text-center py-10 mt-28 border-t-[1px] border-white/15">
+  <div class="w-full flex items-center justify-center text-2xl space-x-2 mb-2">
+    <Portfolio class="size-6" />
+    <p class="font-extrabold leading-9 text-white">portfolio</p>
+  </div>
+  <p
+    class="flex justify-center items-center text-xs font-bold text-white/80 leading-loose"
+  >
+    Designed and developed with
+    <Love class="size-4 text-orange-400 mx-1" /> by arnausaboritcode
+  </p>
+
+  <ul class="flex justify-center mt-5 space-x-5">
+    <li>
+      <SocialBadge href="https://github.com/arnausaboritcode">
+        <GitHub class="size-6" />
+        GitHub
+      </SocialBadge>
+    </li>
+    <li>
+      <SocialBadge
+        href="https://www.linkedin.com/in/arnau-saborit-valencia-937269235/"
+      >
+        <LinkedIn class="size-6" />
+        LinkedIn
+      </SocialBadge>
+    </li>
+  </ul>
+</footer>

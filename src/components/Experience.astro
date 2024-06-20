@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCIE = [
+  {
+    date: "September 2022",
+    title: "Audiovisuals, advertising designs, and web maintenance - Freelance",
+    company: "Optimal Solar Energy",
+    description:
+      "Design and creation of graphic, audiovisual, and advertising documentation for Optimal Solar Energy. Maintenance and updating of the company's website.",
+    link: "https://optimalenergy.es/",
+  },
+  {
+    date: "Summers from 2018 to 2022",
+    title: "Industrial maintenance",
+    company: "Seida S.L.",
+    description:
+      "Temporary job alongside my studies. Starting as a laborer, I progressed year by year until I eventually led a small maintenance team at the electrical and industrial maintenance company.",
+  },
+];
+---
+
+<ol class="relative border-s-2 border-[#ffffff26] ml-3">
+  {
+    EXPERIENCIE.map((experience) => (
+      <li class="mb-10 ms-8">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

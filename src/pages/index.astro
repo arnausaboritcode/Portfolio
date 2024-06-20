@@ -1,0 +1,70 @@
+---
+import "aos/dist/aos.css";
+import Badge from "../components/Badge.astro";
+import ByMe from "../components/ByMe.astro";
+import Experience from "../components/Experience.astro";
+import Hero from "../components/Hero.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../icons/Briefcase.astro";
+import ByMeIcon from "../icons/ByMe.astro";
+import ProjectsIcon from "../icons/Projects.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Arnau Saborit Portfolio - Web Developer and Programmer"
+  description="Hire Arnau Saborit to create your web or mobile application. A specialized web developer in crafting unique applications."
+>
+  <main class="px-4">
+    <SectionContainer id="home" class="pt-36 pb-32">
+      <Hero />
+      <img
+        src="desk.webp"
+        alt="Desk"
+        class="animate-bounced mx-auto mt-10 w-full drop-shadow-[0_25px_25px_rgba(255,255,255,0.05)]"
+      />
+    </SectionContainer>
+
+    <SectionContainer class="pb-32" id="experience">
+      <h2
+        class="text-3xl font-semibold mb-20 flex gap-x-3 items-center"
+        data-aos="fade-left"
+      >
+        <Briefcase class="size-6" />
+        Experience
+        <a
+          href="https://es.linkedin.com/in/arnau-saborit-valencia-937269235"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Available for hire</Badge>
+        </a>
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer class="pb-32" id="projects">
+      <h2
+        class="text-3xl font-semibold mb-20 flex gap-x-3 items-center"
+        data-aos="fade-right"
+      >
+        <ProjectsIcon class="size-6" />
+        Last projects
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="aboutme">
+      <h2
+        class="text-3xl font-semibold mb-20 flex gap-x-3 items-center"
+        data-aos="fade-left"
+      >
+        <ByMeIcon class="size-6" />
+        About Me
+      </h2>
+      <ByMe />
+    </SectionContainer>
+  </main>
+</Layout>
