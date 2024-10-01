@@ -38,14 +38,14 @@ const { date, title, company, description, link, tags } = Astro.props;
       target="_blank"
       rel="noopener noreferrer"
       href={link}
-      class="w-full flex flex-col gap-3 p-4 md:p-8 rounded-xl hover:bg-accent/30 hover:drop-shadow-lg hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:cursor-pointer transition-all duration-300 group"
+      class="w-full flex flex-col gap-3 p-4 md:p-8 rounded-xl lg:hover:bg-accent/30 lg:hover:drop-shadow-lg lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:cursor-pointer transition-all duration-300 group"
     >
       <h3
-        class="text-lg md:text-xl text-pretty font-bold text-white/90 group-hover:text-orange-400/90 mb-2 transition duration-300"
+        class="text-lg md:text-xl text-pretty font-bold text-white/90 lg:group-hover:text-orange-400/90 mb-2 transition duration-300"
       >
         <span>{title} · {company}</span>
         <LinkIcon
-          class="inline-block size-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+          class="inline-block size-4 lg:group-hover:translate-x-1 lg:group-hover:-translate-y-1 transition-transform duration-300"
         />
       </h3>
 
