@@ -1,41 +1,42 @@
 ---
-import GitHub from "../icons/GitHub.astro";
-
-import LinkedIn from "../icons/LinkedIn.astro";
-
 import Love from "../icons/Love.astro";
-
-import Portfolio from "../icons/Portfolio.astro";
-
-import SocialBadge from "./SocialBadge.astro";
 ---
 
-<footer class="text-center py-10 mt-28 border-t-[1px] border-white/15">
-  <div class="w-full flex items-center justify-center text-2xl space-x-2 mb-2">
-    <Portfolio class="size-6" />
-    <p class="font-extrabold leading-9 text-white">portafolio</p>
-  </div>
-  <p
-    class="flex justify-center items-center text-xs font-bold text-white/80 leading-loose"
+<footer class="text-center p-10 border-t-[1px] border-white/15">
+  <div
+    class="flex md:flex-row flex-col-reverse gap-y-2 items-center justify-between"
   >
-    Diseñado y desarrollado con
-    <Love class="size-4 text-orange-400 mx-1" /> por arnausaboritcode
-  </p>
-
-  <ul class="flex justify-center mt-5 space-x-5">
-    <li>
-      <SocialBadge href="https://github.com/arnausaboritcode">
-        <GitHub class="size-6" />
-        GitHub
-      </SocialBadge>
-    </li>
-    <li>
-      <SocialBadge
-        href="https://www.linkedin.com/in/arnau-saborit-valencia-937269235/"
+    <span></span>
+    <p class="md:text-sm text-xs text-pretty leading-5 text-white/80">
+      Diseñado y desarrollado con
+      <Love class="inline-block size-4 text-red-500 mx-1" /> por <span
+        class="font-bold text-orange-400/85">arnausaboritcode</span
+      >, usando <a
+        class="text-orange-400/85 underline underline-offset-4 cursor-pointer"
+        href="https://astro.build/"
+        target="_blank"
+        rel="noopener noreferrer">Astro</a
+      > y <a
+        class="text-orange-400/85 underline underline-offset-4 cursor-pointer"
+        href="https://tailwindcss.com/"
+        target="_blank"
+        rel="noopener noreferrer">Tailwind CSS</a
       >
-        <LinkedIn class="size-6" />
-        LinkedIn
-      </SocialBadge>
-    </li>
-  </ul>
+    </p>
+    <button
+      id="scrollToTopButton"
+      title="Scroll to top"
+      aria-label="Scroll to top"
+      class="text-sm text-white/50 underline underline-offset-4 cursor-pointer"
+      >Volver arriba</button
+    >
+  </div>
 </footer>
+
+<script>
+  document
+    .getElementById("scrollToTopButton")
+    ?.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>

@@ -1,0 +1,78 @@
+---
+import ExternalLink from "../icons/ExternalLink.astro";
+import GitHub from "../icons/GitHub.astro";
+import IconBadge from "./IconBadge.astro";
+import Tags from "./Tags.astro";
+import Tooltip from "./Tooltip.astro";
+
+interface Tag {
+  name: string;
+  icon: any;
+}
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  link?: string;
+  github?: string;
+  image: string;
+  tags: Tag[];
+}
+
+const { title, subtitle, description, link, github, image, tags } = Astro.props;
+---
+
+<div
+  class="w-full flex items-center flex-col-reverse lg:flex-row justify-between lg:p-8 p-6 border rounded-xl border-white/15 gap-y-12 lg:gap-x-12 group"
+>
+  <div class="flex flex-col w-full space-y-8">
+    <div class="flex flex-col md:flex-row flex-wrap items-center gap-2">
+      <h3
+        class="text-pretty text-2xl md:text-3xl font-semibold text-orange-400/85"
+      >
+        {title}
+      </h3>
+      <span class="hidden md:block rotate-90 w-6 my-auto h-0.5 bg-white/50"
+      ></span>
+      <div class="flex items-center justify-center gap-2">
+        <IconBadge href={github}>
+          <GitHub class="size-6 text-white/80" />
+          <Tooltip>Código</Tooltip>
+        </IconBadge>
+        <IconBadge href={link}>
+          <ExternalLink class="size-6 text-white/80" />
+          <Tooltip>Pruébalo!</Tooltip>
+        </IconBadge>
+      </div>
+    </div>
+
+    <h4 class="mb-6 text-base text-pretty text-white">
+      <span>{subtitle}.</span>
+    </h4>
+
+    <p
+      class="mb-4 text-base font-normal text-white/75 text-pretty leading-7"
+      set:html={description}
+    />
+    <div class="w-full flex flex-wrap gap-2">
+      {
+        tags.map((tag) => (
+          <Tags>
+            <tag.icon class="size-4" />
+            {tag.name}
+          </Tags>
+        ))
+      }
+    </div>
+  </div>
+  <div
+    class="flex flex-col w-full overflow-clip rounded-xl transition duration-500 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50 md:group-hover:-translate-y-1"
+  >
+    <img
+      class="w-full object-cover object-top shadow-2xl shadow-white/15 h-56 sm:h-full md:group-hover:scale-105 transition duration-500"
+      src={image}
+      loading="lazy"
+      alt="Captura de pantalla del proyecto"
+    />
+  </div>
+</div>

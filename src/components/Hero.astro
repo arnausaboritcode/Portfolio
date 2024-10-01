@@ -1,37 +1,61 @@
 ---
-import LinkedInIcon from "../icons/LinkedIn.astro";
-
-import MailIcon from "../icons/Mail.astro";
-
-import SocialBadge from "./SocialBadge.astro";
+import GitHub from "../icons/GitHub.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import Mail from "../icons/Mail.astro";
+import Badge from "./Badge.astro";
+import IconBadge from "./IconBadge.astro";
+import Tooltip from "./Tooltip.astro";
 ---
 
-<div class="w-full flex flex-col justify-center items-center">
-  <h1
-    class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row items-center gap-x-4 pb-6 lg:pb-4"
+<div class="w-full flex flex-col justify-center items-center gap-10">
+  <div
+    class="w-full flex flex-row flex-wrap-reverse justify-between items-center gap-6"
   >
-    <!-- <HandIcon class="animate-wave size-16 md:size-20" /> -->
-    Hola, soy Arnau Saborit
-  </h1>
-  <h2
-    class="text-lg text-center text-balance text-white/80 lg:text-xl max-w-[750px]"
+    <div class="flex flex-col justify-center items-start gap-5">
+      <h1 class="text-white/90 text-pretty text-4xl md:text-5xl font-bold">
+        Hola! Soy Arnau
+      </h1>
+      <h2 class="text-2xl md:text-3xl text-pretty font-semibold text-white/60">
+        Desarrollador de
+        <span class="text-orange-400/85 font-bold"> software</span>
+      </h2>
+    </div>
+    <img
+      src="/avatar.webp"
+      alt="Arnau Saborit"
+      class="bg-white rounded-full shadow-lg size-24"
+    />
+  </div>
+
+  <p
+    class="md:text-xl md:leading-9 text-lg leading-8 text-pretty text-white/60"
   >
-    <span class="text-orange-400/85 font-bold"
-      >Ingeniero de software y especialista en multimedia
-    </span>
-    de Barcelona, España. Especializado en el desarrollo de aplicaciones utilizando
-    Angular.
-  </h2>
-  <nav class="flex flex-row gap-5 mt-6 flex-wrap">
-    <SocialBadge href="mailto: arnausaboritvalencia@gmail.com">
-      <MailIcon class="size-6" />
-      Contacto
-    </SocialBadge>
-    <SocialBadge
-      href="https://www.linkedin.com/in/arnau-saborit-valencia-937269235/"
-    >
-      <LinkedInIcon class="size-6" />
-      LinkedIn
-    </SocialBadge>
+    Especializado en el <span class="font-bold"
+      >desarrollo de aplicaciones web utilizando Angular</span
+    >, pero también apasionado por la creación de cualquier tipo de software. De
+    Barcelona, España, con <span class="text-orange-400/85 font-bold">
+      +2 años de experiencia académica</span
+    >.
+  </p>
+  <nav
+    class="w-full flex flex-col md:flex-row flex-wrap items-start gap-x-3 gap-y-4"
+  >
+    <Badge>Contrátame</Badge>
+    <span class="md:rotate-90 md:w-6 block my-auto h-0.5 w-1/2 bg-white/50"
+    ></span>
+    <div class="flex items-center flex-wrap gap-3">
+      <IconBadge href="https://www.linkedin.com/in/arnausaborit/">
+        <LinkedIn class="size-6 text-white/80" />
+        <Tooltip>LinkedIn</Tooltip>
+      </IconBadge>
+      <IconBadge href="https://github.com/arnausaboritcode">
+        <GitHub class="size-6 text-white/80" />
+        <Tooltip>GitHub</Tooltip>
+      </IconBadge>
+      <IconBadge href="mailto: arnausaboritvalencia@gmail.com">
+        <Mail class="size-6 text-white/80" />
+        <Tooltip>Correo</Tooltip>
+      </IconBadge>
+    </div>
   </nav>
 </div>

@@ -1,93 +1,81 @@
 ---
-import SocialBadge from "../components/SocialBadge.astro";
-
 import Angular from "../icons/Angular.astro";
-
-import GitHub from "../icons/GitHub.astro";
-
-import Preview from "../icons/Preview.astro";
 
 import Tailwind from "../icons/Tailwind.astro";
 
 import LinkInline from "./LinkInline.astro";
 
 import Arrow from "../icons/Arrow.astro";
+import Laravel from "../icons/Laravel.astro";
+import Mysql from "../icons/Mysql.astro";
+import Nestjs from "../icons/Nestjs.astro";
+import Postgre from "../icons/Postgre.astro";
+import ProjectsItem from "./ProjectsItem.astro";
 
 const TAGS = {
   ANGULAR: {
     name: "Angular",
-    class: "bg-black text-white",
     icon: Angular,
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-cyan-800 text-white",
     icon: Tailwind,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    icon: Laravel,
+  },
+  NESTJS: {
+    name: "NestJS",
+    icon: Nestjs,
+  },
+  MYSQL: {
+    name: "MySQL",
+    icon: Mysql,
+  },
+  POSTGRESSQL: {
+    name: "PostgresSQL",
+    icon: Postgre,
   },
 };
 
 const PROJECTS = [
   {
-    title: "PopCorn - Una plataforma de streaming de películas",
+    title: "PopCorn Cinema",
+    subtitle: "Una plataforma de streaming de películas",
     description:
-      "Una aplicación web que se presenta como un servicio de streaming en línea para películas. Su objetivo es proporcionar una interfaz intuitiva para presentar, organizar y filtrar información sobre contenido cinematográfico de manera efectiva y satisfactoria para los usuarios.",
-    link: "https://tabler.io/icons",
-    github: "https://tabler.io/docs/getting-started",
+      "Una aplicación web que se presenta como un <span class='text-orange-400/85 font-bold'>servicio de streaming en línea</span> para películas. Su objetivo es proporcionar una <span class='text-orange-400/85 font-bold'>interfaz intuitiva</span> para <span class=' font-bold'>presentar</span>, <span class=' font-bold'>organizar</span> y <span class=' font-bold'>filtrar</span> información sobre contenido cinematográfico de manera efectiva y satisfactoria para los usuarios.",
+    link: "https://popcorncinema.vercel.app/welcome",
+    github: "https://github.com/arnausaboritcode/TFM",
     image: "/projects/popcorn.webp",
-    tags: [TAGS.ANGULAR, TAGS.TAILWIND],
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.LARAVEL, TAGS.MYSQL],
+  },
+  {
+    title: "The Dev Hunt",
+    subtitle: "Recursos para desarrolladores",
+    description:
+      "Dev Hunt <span class=' font-bold'>recoge y unifica en un solo lugar</span> todo tipo de herramientas y recursos para desarrolladores, desde <span class='text-orange-400/85 font-bold'>extensiones</span> hasta <span class='text-orange-400/85 font-bold'>paletas de colores</span>, pasando por <span class='text-orange-400/85 font-bold'>herramientas de hosting</span> y <span class='text-orange-400/85 font-bold'>plantillas de diseño</span>. Todo lo que un desarrollador necesita para su día a día. <span class='font-bold'>Aún está en desarrollo</span>, pero se puede consultar la versión actual.",
+    link: "https://thedevhunt.vercel.app/tools",
+    github: "https://github.com/arnausaboritcode/DevTools",
+    image: "/projects/devhunt.webp",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.NESTJS, TAGS.POSTGRESSQL],
   },
 ];
 ---
 
-{
-  PROJECTS.map(({ title, description, image, tags }) => (
-    <div
-      class="flex md:flex-row flex-col justify-between space-x-0 space-y-12 md:space-x-12 md:space-y-0 group"
-      data-aos="fade-up"
-    >
-      <div class="flex flex-col md:w-3/6 w-full overflow-clip rounded-xl transition duration-500 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50 md:group-hover:-translate-y-1">
-        <img
-          class="object-cover object-top shadow-2xl shadow-white/15 h-56 sm:h-full md:scale-110 w-full md:group-hover:scale-105 transition duration-500"
-          src={image}
-          loading="lazy"
-          alt="Captura de pantalla del proyecto"
-        />
-      </div>
-      <div class="flex flex-col md:w-3/6 w-full space-y-8">
-        <h3 class="text-2xl font-semibold text-white">{title}</h3>
-        <ul class="flex gap-x-2 flex-row">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <p class="text-sm text-white/80 my-4 text-pretty">{description}</p>
-        <div class="flex justify-start items-center gap-x-5">
-          <SocialBadge href="https://github.com/arnausaboritcode/TFM">
-            <GitHub class="size-6" />
-            Code
-          </SocialBadge>
-          <SocialBadge href="https://popcorncinema.vercel.app/welcome">
-            <Preview class="size-6" />
-            Preview
-          </SocialBadge>
-        </div>
-      </div>
-    </div>
-  ))
-}
+<ol class="relative">
+  {
+    PROJECTS.map((project) => (
+      <li class="mb-20">
+        <ProjectsItem {...project} />
+      </li>
+    ))
+  }
+</ol>
 
-<div
-  class="w-full flex flex-row justify-center items-center text-sm text-white/80 text-pretty mt-20"
->
+<div class="w-full flex items-center justify-end gap-1 mt-20 px-6">
   <LinkInline href="https://github.com/arnausaboritcode">
-    Más en GitHub
-    <Arrow class="size-4" />
+    <span class="text-white/85">Visita más de mis proyectos</span> en GitHub
   </LinkInline>
+  <Arrow class="size-7 text-orange-400/85" />
 </div>

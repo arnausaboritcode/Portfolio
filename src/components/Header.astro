@@ -1,29 +1,38 @@
-<header
-  class="fixed top-0 z-50 flex items-center justify-center w-full mx-auto mt-2"
->
+---
+import Briefcase from "../icons/Briefcase.astro";
+import ProjectsIcon from "../icons/Projects.astro";
+import ByMeIcon from "../icons/ByMe.astro";
+---
+
+<header class="w-full fixed top-0 left-0 z-50">
   <nav
-    class="flex justify-center items-center gap-x-5 px-4 py-2 text-sm font-medium rounded-full text-white/80 border-white/25"
+    class="w-full flex justify-center items-center gap-x-5 p-6 text-sm font-medium text-white/50"
   >
-    <a
-      href="/#home"
-      aria-label="home"
-      class="relative block transition hover:text-orange-400/90">Inicio</a
-    >
     <a
       href="/#experience"
       aria-label="experience"
-      class="relative block transition hover:text-orange-400/90">Experiencia</a
+      class="relative transition flex items-center gap-x-2 hover:text-white/90"
     >
+      <Briefcase class="size-4" />
+      Experiencia
+    </a>
     <a
       href="/#projects"
       aria-label="projects"
-      class="relative block transition hover:text-orange-400/90">Proyectos</a
+      class="relative transition flex items-center gap-x-2 hover:text-white/90"
     >
+      <ProjectsIcon class="size-4" />
+
+      Proyectos
+    </a>
     <a
       href="/#aboutme"
       aria-label="aboutme"
-      class="relative block transition hover:text-orange-400/90">Sobre mí</a
+      class="relative transition flex items-center gap-x-2 hover:text-white/90"
     >
+      <ByMeIcon class="size-4" />
+      Sobre mí
+    </a>
   </nav>
 </header>
 
@@ -53,10 +62,10 @@
         `nav a[href="/#${currentSection.id}"]`
       );
 
-      navLinks.forEach((link) => link.classList.remove("text-orange-400"));
+      navLinks.forEach((link) => link.classList.remove("text-white/90"));
 
       if (activeLink) {
-        activeLink.classList.add("text-orange-400");
+        activeLink.classList.add("text-white/90");
       }
     };
 

@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+import animations from "@midudev/tailwind-animations";
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        accent: "hsl(12, 6.5%, 15.1%)",
+      },
       keyframes: {
         wave: {
           "0%": { transform: "rotate(0.0deg)" },
@@ -20,7 +24,7 @@ export default {
             transform: "translateY(0)",
           },
           "50%": {
-            transform: "translateY(-30px)",
+            transform: "translateX(-40px)",
           },
           "100%": {
             transform: "translateY(0)",
@@ -33,5 +37,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [animations],
 };

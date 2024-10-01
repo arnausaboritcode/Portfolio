@@ -18,21 +18,12 @@ import Header from "../components/Header.astro";
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/avatar.webp" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
   </head>
   <body>
-    <div class="fixed left-0 top-0 -z-10 h-full w-full">
-      <div class="relative h-full w-full bg-slate-950">
-        <div
-          class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
-        >
-        </div>
-      </div>
-    </div>
-
     <Header />
     <slot />
     <Footer />
@@ -45,12 +36,26 @@ import Header from "../components/Header.astro";
         scroll-behavior: smooth;
       }
       body {
-        /* background-color: black; */
+        background-color: black;
         color: #ffff;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
         overflow-x: hidden;
+      }
+      body::before {
+        background-image: url("/pattern.svg");
+        background-blend-mode: difference;
+        background-position-x: 50%;
+        background-position-y: top;
+        background-repeat: no-repeat;
+        content: "";
+        height: 100%;
+        inset: 0;
+        opacity: 0.8;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
       }
       @media only screen and (max-width: 768px) {
         main {
@@ -66,14 +71,12 @@ import Header from "../components/Header.astro";
       header nav {
         animation: blur linear both 0.5s;
         animation-timeline: scroll();
-        animation-range: 0 100px;
+        animation-range: 0 150px;
       }
 
       @keyframes blur {
         to {
-          border: 2px solid rgba(255, 255, 255, 0.25);
-          background-color: rgb(2 6 23);
-          box-shadow: 0 25px 50px -12px rgb(255 255 255 / 0.25);
+          background-color: black;
         }
       }
     </style>

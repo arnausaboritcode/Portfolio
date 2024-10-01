@@ -1,30 +1,76 @@
 ---
+import Brain from "../icons/Brain.astro";
+import Comunication from "../icons/Comunication.astro";
+import Illustrator from "../icons/Illustrator.astro";
+import Leader from "../icons/Leader.astro";
+import Photoshop from "../icons/Photoshop.astro";
+import Premiere from "../icons/Premiere.astro";
+import WordPress from "../icons/WordPress.astro";
 import ExperienceItem from "./ExperienceItem.astro";
+
+const TAGS = {
+  COMUNICATION: {
+    name: "Comunicación",
+    icon: Comunication,
+  },
+  LEADER: {
+    name: "Liderazgo",
+    icon: Leader,
+  },
+  BRAIN: {
+    name: "Pensamiento analítico",
+    icon: Brain,
+  },
+  PHOTOSHOP: {
+    name: "Photoshop",
+    icon: Photoshop,
+  },
+  ILLUSTRATOR: {
+    name: "Illustrator",
+    icon: Illustrator,
+  },
+  PREMIERE: {
+    name: "Premiere",
+    icon: Premiere,
+  },
+  WORDPRESS: {
+    name: "WordPress",
+    icon: WordPress,
+  },
+};
 
 const EXPERIENCIE = [
   {
-    date: "Septiembre 2022",
-    title:
-      "Audiovisuales, diseños publicitarios y mantenimiento web - Freelance",
+    date: "En remoto | Septiembre 2021 - Agosto 2022",
+    title: "Audiovisuales, diseños publicitarios y mantenimiento web",
     company: "Optimal Solar Energy",
     description:
-      "Diseño y creación de documentación gráfica, audiovisual y publicitaria para Optimal Solar Energy. Mantenimiento y actualización del sitio web de la empresa.",
+      "Diseño y creación de <span class='text-orange-400/85 font-bold'> documentación gráfica</span>, <span class='text-orange-400/85 font-bold'>audiovisual</span> y <span class='text-orange-400/85 font-bold'>publicitaria </span> para Optimal Solar Energy. <span class='font-bold'>Mantenimiento y actualización del sitio web </span> de la empresa.",
     link: "https://optimalenergy.es/",
+    tags: [
+      TAGS.COMUNICATION,
+      TAGS.PHOTOSHOP,
+      TAGS.ILLUSTRATOR,
+      TAGS.PREMIERE,
+      TAGS.WORDPRESS,
+    ],
   },
   {
-    date: "Veranos de 2018 a 2022",
+    date: "Gurb, España | Veranos de 2018 a 2022",
     title: "Mantenimiento industrial",
     company: "Seida S.L.",
     description:
-      "Trabajo temporal junto con mis estudios. Comenzando como obrero, progresé año tras año hasta liderar un pequeño equipo de mantenimiento en la empresa de mantenimiento eléctrico e industrial.",
+      "<span class='font-bold'>Trabajo temporal junto con mis estudios </span>. Comenzando como obrero, progresé año tras año hasta <span class='text-orange-400/85 font-bold'>liderar</span> un <span class='text-orange-400/85 font-bold'>pequeño equipo</span> de mantenimiento en la empresa.",
+    link: "https://www.seida.com/",
+    tags: [TAGS.LEADER, TAGS.BRAIN],
   },
 ];
 ---
 
-<ol class="relative border-s-2 border-[#ffffff26] ml-3">
+<ol class="relative">
   {
     EXPERIENCIE.map((experience) => (
-      <li class="mb-10 ms-8">
+      <li class="mb-10">
         <ExperienceItem {...experience} />
       </li>
     ))

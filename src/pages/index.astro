@@ -1,71 +1,50 @@
 ---
 import "aos/dist/aos.css";
-import Badge from "../components/Badge.astro";
 import ByMe from "../components/ByMe.astro";
 import Experience from "../components/Experience.astro";
 import Hero from "../components/Hero.astro";
 import Projects from "../components/Projects.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import Briefcase from "../icons/Briefcase.astro";
-import ByMeIcon from "../icons/ByMe.astro";
-import ProjectsIcon from "../icons/Projects.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Portafolio de Arnau Saborit - Desarrollador Web y Programador"
+  title="Arnau Saborit | Desarrollador de software"
   description="Contrata a Arnau Saborit para crear tu aplicación web o móvil. Un desarrollador web especializado en la creación de aplicaciones únicas."
 >
-  <main class="px-4">
-    <SectionContainer id="home" class="pt-36 pb-32">
+  <main class="px-6 animate-fade-in-down animate-delay-200">
+    <SectionContainer class="pt-36">
       <Hero />
-      <img
-        src="desk.webp"
-        alt="Desk"
-        class="animate-bounced mx-auto mt-10 w-full drop-shadow-[0_25px_25px_rgba(255,255,255,0.05)]"
-      />
     </SectionContainer>
 
-    <SectionContainer class="pb-32" id="experience">
+    <SectionContainer id="experience">
       <h2
-        class="text-3xl font-semibold mb-20 flex gap-x-3 items-center"
-        data-aos="fade-down"
-        data-aos-duration="200"
+        class="text-pretty text-2xl md:text-3xl mb-20 flex gap-3 items-center before:content-['01.'] before:text-white/80"
       >
-        <Briefcase class="size-6" />
-        Experiencia
-        <a
-          href="https://es.linkedin.com/in/arnau-saborit-valencia-937269235"
-          target="_blank"
-          rel="noopener"
-          class="flex justify-center items-center"
-        >
-          <Badge>Contrátame</Badge>
-        </a>
+        <span class="text-white/85 font-semibold">Dónde he trabajado</span>
+        <span class="grow h-0.5 bg-white/10 ml-[0.6em]"></span>
       </h2>
       <Experience />
     </SectionContainer>
 
-    <SectionContainer class="pb-32" id="projects">
+    <SectionContainer class="lg:max-w-7xl md:max-w-3xl" id="projects">
       <h2
-        class="text-3xl font-semibold mb-20 flex gap-x-3 items-center"
-        data-aos="fade-down"
-        data-aos-duration="200"
+        class="text-pretty text-2xl md:text-3xl mb-20 flex gap-3 items-center before:content-['02.'] before:text-white/80"
       >
-        <ProjectsIcon class="size-6" />
-        Últimos proyectos
+        <span class="text-white/85 font-semibold"
+          >Algunos de mis proyectos favoritos</span
+        >
+        <span class="grow h-0.5 bg-white/10 ml-[0.6em]"></span>
       </h2>
       <Projects />
     </SectionContainer>
 
-    <SectionContainer id="aboutme">
+    <SectionContainer class="lg:max-w-5xl md:max-w-2xl" id="aboutme">
       <h2
-        class="text-3xl font-semibold mb-20 flex gap-x-3 items-center"
-        data-aos="fade-down"
-        data-aos-duration="200"
+        class="text-pretty text-2xl md:text-3xl mb-20 flex gap-3 items-center before:content-['03.'] before:text-white/80"
       >
-        <ByMeIcon class="size-6" />
-        Sobre mí
+        <span class="text-white/85 font-semibold">Un poco sobre mí</span>
+        <span class="grow h-0.5 bg-white/10 ml-[0.6em]"></span>
       </h2>
       <ByMe />
     </SectionContainer>

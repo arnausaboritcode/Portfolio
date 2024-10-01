@@ -1,36 +1,128 @@
-<div
-  class="w-full flex flex-col md:flex-row-reverse items-center justify-center space-x-0 space-y-14 md:space-x-reverse md:space-x-14 md:space-y-0"
-  data-aos="fade-up"
->
-  <img
-    class="object-cover w-64 h-full shadow-2xl rounded-xl shadow-white/15 p-2 border-[1px] border-white/25 bg-white/10"
-    src="me.webp"
-    alt="Arnau Saborit"
-    loading="lazy"
-  />
-  <div class="flex flex-col space-y-4 text-white/80 text-base text-pretty">
-    <p>
-      Mi nombre es Arnau, y tengo <span class="text-orange-400/90"
-        >dos años de experiencia en el mundo del desarrollo web</span
-      >. Durante toda mi vida he estado en contacto directo con la tecnología,
-      desde la creación de pequeños scripts con Scratch hasta la producción de
-      contenido audiovisual en YouTube.
-    </p>
+---
+import Education from "../icons/Education.astro";
+import House from "../icons/House.astro";
+import Interest from "../icons/Interest.astro";
+import Work from "../icons/Work.astro";
+---
 
-    <p>
-      Soy licenciado <span class="text-orange-400/90"
-        >en Multimedia y especializado en desarrollo web</span
-      > a través de un máster. Esta comprensión profunda del mundo digital me aporta
-      un sólido conocimiento acerca de distintas vertientes del desarrollo, como
-      el diseño y la experiencia de usuario.
+<div
+  class="w-full flex lg:flex-row lg:items-start flex-col items-center justify-center gap-7"
+>
+  <div
+    class="lg:w-[60%] lg:h-[32rem] w-full space-y-4 text-white/80 text-base text-pretty border rounded-xl border-white/15 md:p-8 p-6"
+  >
+    <div class="flex items-center gap-x-4 mb-8">
+      <Work class="size-8 text-white/80" />
+      <h3 class="text-xl md:text-2xl font-semibold text-white">Trabajando</h3>
+    </div>
+
+    <p class="text-base font-normal text-white/75 text-pretty leading-7">
+      Recién licenciado de un <span class="text-orange-400/90 font-bold"
+        >máster en desarrollo web</span
+      >, estoy en búsqueda de mis primeras oportunidades laborales en este
+      sector. Me considero una persona con un gran sentido del <span
+        class="text-orange-400/90 font-bold">detalle</span
+      > en los proyectos en los que participo, siempre orientado hacia <span
+        class="text-orange-400/90 font-bold">el mejor resultado posible</span
+      >.
     </p>
-    <p>
-      Estoy buscando nuevos desafíos en el mundo del desarrollo web,
-      particularmente en <span class="text-orange-400/90"
-        >la creación y gestión de aplicaciones con Angular.</span
-      > Hasta el momento, he desarrollado aplicaciones web escalables, robustas y
-      flexibles, a nivel académico. Ahora estoy listo para aplicar mis conocimientos
-      y resolver problemas reales en el mercado.
+    <p class="text-base font-normal text-white/75 text-pretty leading-7">
+      <span class="font-bold"
+        >Me motiva crear soluciones que resuelvan problemas reales</span
+      >, además de automatizar tareas para mejorar la eficiencia de las mismas.
+      Lo anterior se relaciona con mi interés actual en el <span
+        class="text-orange-400/90 font-bold">front-end</span
+      >, donde me especializo en construir aplicaciones web escalables y
+      robustas <span class="text-orange-400/90 font-bold"
+        >utilizando Angular</span
+      >.
+    </p>
+    <div class="w-full h-20 overflow-hidden opacity-80 relative !mt-6">
+      <img
+        class="object-cover object-top"
+        src="/work.webp"
+        loading="lazy"
+        alt="Representación web oculta de un trabajo"
+      />
+      <div
+        class="absolute bottom-0 w-full h-20 bg-gradient-to-t from-black to-transparent"
+      >
+      </div>
+    </div>
+  </div>
+  <div
+    class="lg:w-[40%] lg:h-[32rem] w-full space-y-4 text-base text-pretty border rounded-xl border-white/15 md:p-8 p-6"
+  >
+    <div class="flex items-center gap-x-4 mb-8">
+      <Interest class="animate-wave size-8 text-white/80" />
+      <h3 class="text-xl md:text-2xl font-semibold text-white">
+        Mi lado personal
+      </h3>
+    </div>
+    <p class="mb-4 text-base font-normal text-white/75 text-pretty leading-7">
+      Las 3 palabras que mejor me definen son <span
+        class="text-orange-400/90 font-bold">resiliente</span
+      >, <span class="text-orange-400/90 font-bold">optimista</span> e
+      <span class="text-orange-400/90 font-bold">independiente</span>. Me cuesta
+      rendirme ante algo en lo que he decidido concentrarme, y siempre trato de
+      aportar una perspectiva positiva.
+    </p>
+    <p class="mb-4 text-base font-normal text-white/75 text-pretty leading-7">
+      Soy <span class="text-orange-400/90 font-bold"
+        >curioso por naturaleza</span
+      >. En mi tiempo libre, me gusta descubrir y aprender nuevas cosas, y,
+      sobre todo, entender como funcionan.
+    </p>
+    <div
+      class="w-full flex justify-center h-28 overflow-hidden opacity-80 relative"
+    >
+      <img
+        src="/avatar_2.webp"
+        alt="Avatar de Arnau Saborit"
+        loading="lazy"
+        class="size-36 object-cover object-top"
+      />
+      <div
+        class="absolute bottom-0 w-full h-8 bg-gradient-to-t from-black to-transparent"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="w-full flex lg:flex-row flex-col lg:items-start items-center justify-center gap-7 mt-6"
+>
+  <div
+    class="lg:w-[30%] lg:h-56 w-full space-y-4 text-white/80 text-base text-pretty border rounded-xl border-white/15 md:p-8 p-6"
+  >
+    <div class="flex items-center gap-x-4 mb-8">
+      <House class="size-8" />
+      <h3 class="text-xl md:text-2xl font-semibold text-white">Ubicación</h3>
+    </div>
+    <h4 class="text-2xl text-white/90 lg:text-center">
+      De <span class="text-orange-400/90 font-bold">Barcelona</span>
+    </h4>
+    <p class="text-base text-white/50 lg:text-center font-semibold">
+      Cataluña, España
+    </p>
+  </div>
+  <div
+    class="lg:w-[70%] lg:h-56 w-full space-y-4 text-white/80 text-base text-pretty border rounded-xl border-white/15 md:p-8 p-6"
+  >
+    <div class="flex items-center gap-x-4 mb-8">
+      <Education class="size-8" />
+      <h3 class="text-xl md:text-2xl font-semibold text-white">Educación</h3>
+    </div>
+    <p class="mb-4 text-base font-normal text-white/75 text-pretty leading-7">
+      Soy licenciado en Multimedia por la <span
+        class="text-orange-400/90 font-bold"
+        >Universitat Politècnica de Catalunya</span
+      >, y me he especializado en programación web con un <span
+        class="text-orange-400/90 font-bold"
+        >máster
+      </span> en la <span class="text-orange-400/90 font-bold"
+        >Universitat Oberta de Catalunya</span
+      >.
     </p>
   </div>
 </div>
