@@ -60,12 +60,15 @@ const { date, title, company, description, link, tags } = Astro.props;
 
       <div class="w-full flex flex-wrap gap-2">
         {
-          tags.map((tag) => (
-            <Tags>
-              <tag.icon class="size-4" />
-              {tag.name}
-            </Tags>
-          ))
+          tags.map((tag) => {
+            const TagIcon = tag.icon;
+            return (
+              <Tags>
+                <TagIcon class="size-4" />
+                {tag.name}
+              </Tags>
+            );
+          })
         }
       </div>
     </a>
