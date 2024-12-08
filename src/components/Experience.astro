@@ -6,6 +6,8 @@ import Illustrator from "../icons/Illustrator.astro";
 import Leader from "../icons/Leader.astro";
 import Photoshop from "../icons/Photoshop.astro";
 import Premiere from "../icons/Premiere.astro";
+import Team from "../icons/Team.astro";
+import Vue from "../icons/Vue.astro";
 import WordPress from "../icons/WordPress.astro";
 import ExperienceItem from "./ExperienceItem.astro";
 
@@ -21,6 +23,10 @@ const TAGS = {
   BRAIN: {
     name: "Pensamiento analítico",
     icon: Brain,
+  },
+  TEAM: {
+    name: "Trabajo en equipo",
+    icon: Team,
   },
   PHOTOSHOP: {
     name: "Photoshop",
@@ -42,15 +48,28 @@ const TAGS = {
     name: "Astro",
     icon: AstroIcon,
   },
+  VUE: {
+    name: "Vue",
+    icon: Vue,
+  },
 };
 
 const EXPERIENCIE = [
   {
-    date: "En remoto | Septiembre 2021 - Actualmente",
+    date: "Tona, España | Noviembre 2024 - Actualmente",
+    title: "Desarrollador de software",
+    company: "Ausatel Sistemes, S.L.",
+    description:
+      "Creación de <span class='text-orange-400/85 font-bold'>soluciones digitales </span>para grandes empresas nacionales. <span class='font-bold'>Especializado</span> en <span class='font-bold'>construir aplicaciones completas y escalables</span> utilizando <span class='font-bold'>Vue</span>.",
+    link: "https://www.ausatel.cat/",
+    tags: [TAGS.TEAM, TAGS.VUE],
+  },
+  {
+    date: "En remoto | Septiembre 2021 - Noviembre 2024",
     title: "Audiovisuales, diseños publicitarios y mantenimiento web",
     company: "Optimal Solar Energy",
     description:
-      "Diseño y creación de <span class='text-orange-400/85 font-bold'> documentación gráfica</span>, <span class='text-orange-400/85 font-bold'>audiovisual</span> y <span class='text-orange-400/85 font-bold'>publicitaria </span> para Optimal Solar Energy. <span class='font-bold'>Mantenimiento y actualización del sitio web </span> de la empresa. Actualmente, <span class='text-orange-400/85 font-bold'>remodelando la página web</span> de Optimal Solar Energy con Astro.",
+      "Diseño y creación de <span class='text-orange-400/85 font-bold'> documentación gráfica</span>, <span class='text-orange-400/85 font-bold'>edición y postproducción</span> de visuales y <span class='text-orange-400/85 font-bold'>desarrollo y mantenimiento </span> web. Desde la construcción de tripticos hasta la producción de spots publicitarios, <span class='font-bold'> puse en práctica en un entorno real </span> muchos de los conceptos aprendidos durante mi etapa de formación universitaria en multimedia. Me formé en una <span class='text-orange-400/85 font-bold'>metodología de trabajo independiente </span>, adquirí <span class='text-orange-400/85 font-bold'>habilidades comunicativas </span> y mejoré la <span class='text-orange-400/85 font-bold'>identidad visual </span> de la empresa, situándola en una de las <span class='font-bold'>más reconocidas a nivel nacional </span>en el sector de las energías renovables.",
     link: "https://optimalenergy.es/",
     tags: [
       TAGS.COMUNICATION,
@@ -66,7 +85,7 @@ const EXPERIENCIE = [
     title: "Mantenimiento industrial",
     company: "Seida S.L.",
     description:
-      "<span class='font-bold'>Trabajo temporal junto con mis estudios </span>. Comenzando como obrero, progresé año tras año hasta <span class='text-orange-400/85 font-bold'>liderar</span> un <span class='text-orange-400/85 font-bold'>pequeño equipo</span> de mantenimiento en la empresa.",
+      "<span class='font-bold'>Trabajo temporal veraniego junto con mis estudios </span>. Aprendí a desenvolverme en <span class='text-orange-400/85 font-bold'>situaciones complejas </span> y a solucionar <span class='text-orange-400/85 font-bold'>problemas reales</span>, llegando a <span class='text-orange-400/85 font-bold'>liderar</span> un pequeño equipo de mantenimiento en la empresa.",
     link: "https://www.seida.com/",
     tags: [TAGS.LEADER, TAGS.BRAIN],
   },

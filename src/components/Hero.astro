@@ -3,7 +3,6 @@ import GitHub from "../icons/GitHub.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
 import Mail from "../icons/Mail.astro";
 import Resume from "../icons/Resume.astro";
-import Badge from "./Badge.astro";
 import IconBadge from "./IconBadge.astro";
 import Tooltip from "./Tooltip.astro";
 ---
@@ -32,36 +31,41 @@ import Tooltip from "./Tooltip.astro";
     class="md:text-xl md:leading-9 text-lg leading-8 text-pretty text-white/60"
   >
     Especializado en el <span class="font-bold"
-      >desarrollo de aplicaciones web utilizando Angular</span
-    >, pero también apasionado por la creación de cualquier tipo de software. De
-    Barcelona, España, con <span class="text-orange-400/85 font-bold">
-      +2 años de experiencia académica</span
-    >.
+      >desarrollo de aplicaciones web</span
+    >, pero también apasionado por la creación de cualquier tipo de software.
+    Actualmente trabajo en <a
+      href="https://www.ausatel.cat/"
+      role="link"
+      target="_blank"
+      class="text-red-400/85 font-bold underline underline-offset-4">Ausatel</a
+    > como <span class="text-orange-400/85 font-bold"
+      >Desarrollador de Software Junior</span
+    >, un puesto que empecé en Noviembre de 2024.
   </p>
   <nav
     class="w-full flex flex-col md:flex-row flex-wrap md:items-start items-center gap-x-3 gap-y-4"
   >
-    <Badge>Contrátame</Badge>
-    <span class="md:rotate-90 md:w-6 block my-auto h-0.5 w-1/2 bg-white/50"
-    ></span>
+    <!-- <Badge>Contrátame</Badge> -->
+    <!-- <span class="md:rotate-90 md:w-6 block my-auto h-0.5 w-1/2 bg-white/50"
+    ></span> -->
     <div class="flex items-center flex-wrap gap-3">
       <IconBadge href="https://www.linkedin.com/in/arnausaborit/">
-        <LinkedIn class="size-6 text-white/80" />
+        <LinkedIn class="size-7 text-white/80" />
         <Tooltip>LinkedIn</Tooltip>
       </IconBadge>
       <IconBadge href="https://github.com/arnausaboritcode">
-        <GitHub class="size-6 text-white/80" />
+        <GitHub class="size-7 text-white/80" />
         <Tooltip>GitHub</Tooltip>
       </IconBadge>
       <IconBadge href="mailto: arnausaboritvalencia@gmail.com">
-        <Mail class="size-6 text-white/80" />
+        <Mail class="size-7 text-white/80" />
         <Tooltip>Correo</Tooltip>
       </IconBadge>
       <IconBadge
         href="./files/Saborit_Arnau_CV.pdf"
         download="Saborit_Arnau_CV"
       >
-        <Resume class="size-6 text-white/80" />
+        <Resume class="size-7 text-white/80" />
         <Tooltip>Currículum</Tooltip>
       </IconBadge>
     </div>
